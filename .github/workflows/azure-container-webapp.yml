@@ -13,7 +13,13 @@ jobs:
 
       - name: test
         run: npm test
-        
+
+      - name: Cache Dependencies
+        uses: actions/cache@v5
+        with:
+          path: ~/.npm
+          key:  ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+
       - name: Artifact upload
         uses: actions/upload-artifact@v7
         with:
