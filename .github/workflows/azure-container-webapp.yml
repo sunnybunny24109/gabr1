@@ -27,5 +27,5 @@ jobs:
           path: |
              package*
 
-      - name: deploy
+      - name: deploy 
         run: echo "my code is deployed"
